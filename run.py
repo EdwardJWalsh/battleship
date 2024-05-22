@@ -4,6 +4,7 @@
 
 from random import randint
 
+#Define Board class to represent the board
 class Board:
     def __init__(self, size):
         self.size = size
@@ -13,11 +14,13 @@ class Board:
         for row in self.grid:
             print(" ".join(row))
 
+#Define Ship class
 class Ship:
     def __init__(self, row, col):
         self.row = row
         self.col = col
 
+#Define Player class
 class Player:
     def __init__(self, name):
         self.name = name
@@ -26,7 +29,7 @@ class Player:
 
 def initialize_game(player_name):
     player = Player(player_name)
-    player.board = Board(6)  # Assuming board size is 6x6
+    player.board = Board(6) 
     return player
 
 def main():
@@ -34,5 +37,4 @@ def main():
     player = initialize_game(player_name)
     game_play(player)
 
-if __name__ == "__main__":
-    main()
+main()
