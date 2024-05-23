@@ -9,8 +9,8 @@ It is based on the classic Battleships board game where players have to try and 
 
 ## How To Play
 
-* Player starts by entering thier name.
-* Two boards are randomly generated (one for the player and one for the computer, which in this case is the opponent.
+* Player starts by entering their name.
+* Two boards are randomly generated (one for the player and one for the computer, which in this case is the opponent).
 * The players ships location will be indicated by an 'S', Player will not be able to see the location of opponents ship.
 * Player will then be prompted to enter a row and column on the board.
 * Player and computer take turns to try to sink the others battleship.
@@ -87,7 +87,7 @@ I have manually tested this project by doing the following:
 * Tested in my local terminal on GitPod and the Code Institute Heroku terminal
 
 ## Bugs
-When I first wrote the code I was able to see the opponents ship, which I did not want to I edited the code accordingly by editing the print_boards method.
+When I first wrote the code I was able to see the opponents ship, which I did not want, so I edited the code accordingly by editing the print_boards method.
 
 ### Validation testing
 A number of the lines were too long after putting code through PEP8 linter, so I fixed this by beaking up the lines.
