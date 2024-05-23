@@ -1,7 +1,5 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
 from random import randint
+
 
 # Define Board class to represent the board
 class Board:
@@ -9,15 +7,20 @@ class Board:
         self.size = size
         self.grid = [['O'] * size for _ in range(size)]
 
-    def print_board(self):
+    def print_board(self, hide_ships=False):
         for row in self.grid:
-            print(" ".join(row))
+            if hide_ships:
+                print(" ".join(['O' if cell == 'S' else cell for cell in row]))
+            else:
+                print(" ".join(row))
+
 
 # Define Ship class
 class Ship:
     def __init__(self, row, col):
         self.row = row
         self.col = col
+
 
 # Define Player class
 class Player:
@@ -26,20 +29,23 @@ class Player:
         self.board = None
         self.ships = []
 
+
 def initialize_game(player_name):
     player = Player(player_name)
     player.board = Board(6)  # Assuming board size is 6x6
     return player
 
+
 def place_ship(board, ship):
-    # Logic to place the ship on the board
-    pass
+    board.grid[ship.row][ship.col] = 'S'
+
 
 def print_boards(player_board, computer_board):
     print("Player's Board:")
     player_board.print_board()
     print("\nComputer's Board:")
-    computer_board.print_board()  # Hide the computer's ships
+    computer_board.print_board(hide_ships=True)  # Hide the computer's ships
+
 
 def game_play(player):
     print("\nWelcome to Battleship!!!!\n")
@@ -49,14 +55,15 @@ def game_play(player):
         size = 6
         computer_board = Board(size)
 
-        # Place ships
+        # Place player's ship
         ship_row_player = randint(0, size - 1)
         ship_col_player = randint(0, size - 1)
         player.ships.append(Ship(ship_row_player, ship_col_player))
+        place_ship(player.board, player.ships[-1])
 
+        # Place computer's ship
         ship_row_computer = randint(0, size - 1)
         ship_col_computer = randint(0, size - 1)
-        # S for ship
         computer_board.grid[ship_row_computer][ship_col_computer] = 'S'
 
         for turn in range(4):
@@ -68,7 +75,8 @@ def game_play(player):
 
                 if (guess_row == ship_row_computer and
                         guess_col == ship_col_computer):
-                    print(f"\nCongratulations, {player.name}! You sank the computer's battleship!\n")
+                    print(f"\nCongratulations, {player.name}! You sank the "
+                          "computer's battleship!\n")
                     break
                 else:
                     if (guess_row not in range(size) or
@@ -97,13 +105,17 @@ def game_play(player):
             except ValueError:
                 print("\nPlease enter a valid number.\n")
 
-        play_again = input(f"Do you want to play again, {player.name}? (Yes/No): ")
+        play_again = input(
+            f"Do you want to play again, {player.name}? (Yes/No): "
+        )
 
     print(f"\nTHANKS FOR PLAYING WITH US, {player.name.upper()}!!")
+
 
 def main():
     player_name = input("Please enter your name: ")
     player = initialize_game(player_name)
     game_play(player)
+
 
 main()
