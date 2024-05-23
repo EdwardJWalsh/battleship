@@ -46,6 +46,7 @@ Player receives error message if co-ordinates are outside the range of the board
 ## Data Model
 
 __Board Class:__
+
 Attributes:
 * size: Size of the board (assumed to be a square grid).
 * grid: 2D list representing the board with cells initialized to 'O' (ocean).
@@ -54,17 +55,20 @@ Methods:
 * print_board(hide_ships=False): Prints the current state of the board.
 
 __Ship Class__
+
 Attributes:
 * row: Row position of the ship.
 * col: Column position of the ship.
 
 __Player Class__
+
 Attributes:
 * name: Name of the player.
 * board: Instance of the Board class representing the player's game board.
 * ships: List containing instances of the Ship class representing the player's ships.
 
 __Functions:__
+
 * initialize_game(player_name): Initializes the game by creating a player instance and setting up the player's game board.
 * place_ship(board, ship): Places a ship on the specified board.
 * print_boards(player_board, computer_board): Prints both the player's and computer's game boards.
@@ -72,6 +76,7 @@ __Functions:__
 * main(): Entry point of the program, prompts the user to enter their name, initializes the game, and starts gameplay.
 
 __Dependencies__
+
 The code does not rely on any external dependencies and can be run using Pythons built in libraries.
 
 
