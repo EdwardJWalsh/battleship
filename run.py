@@ -68,10 +68,7 @@ def game_play(player):
 
                 if (guess_row == ship_row_computer and
                         guess_col == ship_col_computer):
-                    print(
-                        f"\nCongratulations, {player.name}! You sank "
-                        "the computer's battleship!\n"
-                    )
+                    print(f"\nCongratulations, {player.name}! You sank the computer's battleship!\n")
                     break
                 else:
                     if (guess_row not in range(size) or
@@ -100,9 +97,7 @@ def game_play(player):
             except ValueError:
                 print("\nPlease enter a valid number.\n")
 
-        play_again = input(
-            f"Do you want to play again, {player.name}? (Yes/No): "
-        )
+        play_again = input(f"Do you want to play again, {player.name}? (Yes/No): ")
 
     print(f"\nTHANKS FOR PLAYING WITH US, {player.name.upper()}!!")
 
