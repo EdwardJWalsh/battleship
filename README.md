@@ -79,6 +79,32 @@ __Dependencies__
 
 The code does not rely on any external dependencies and can be run using Pythons built in libraries.
 
+## Testing
+
+I have manually tested this project by doing the following:
+* I passed the code through a PEP8 Linter and found no errors
+* I gave invalid inputs to ensure code was working correctly
+* Tested in my local terminal on GitPod and the Code Institute Heroku terminal
+
+## Bugs
+When I first wrote the code I was able to see the opponents ship, which I did not want to I edited the code accordingly by editing the print_boards method.
+
+### Validation testing
+A number of the lines were too long after putting code through PEP8 linter, so I fixed this by beaking up the lines.
+
+## Deployment
+This project was deployed using Code Institutes mock terminal for Heroku.
+The steps for deployment were:
+* Create a new Heroku app
+* Added buildpacks Python then Nodejs
+* Connected Heroku to GitHub where my repository was set up
+* Selected 'Manual Deploy' option
+* Click on 'Deploy'
+
+## Credits
+Code Institute for the deployment terminal
+
+
 
 
 
